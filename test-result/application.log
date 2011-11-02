@@ -1,0 +1,5 @@
+01 十一月 2011 19:23:43,679 INFO  ~ Starting D:\PLAY\apps\play_learning
+01 十一月 2011 19:23:44,100 WARN  ~ You're running Play! in DEV mode
+01 十一月 2011 19:23:44,210 INFO  ~ Listening for HTTP on port 9000 (Waiting a first request to start) ...
+01 十一月 2011 19:24:13,881 INFO  ~ Connected to jdbc:h2:mem:play;MODE=MYSQL;LOCK_MODE=0
+01 十一月 2011 19:24:14,663 INFO  ~ Application 'play_learning' is now started !
