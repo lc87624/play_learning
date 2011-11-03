@@ -1,4 +1,0 @@
-03 十一月 2011 15:30:49,471 INFO  ~ Starting D:\PLAY\apps\play_learning\.
-03 十一月 2011 15:30:49,908 WARN  ~ You're running Play! in DEV mode
-03 十一月 2011 15:30:50,720 INFO  ~ Connected to jdbc:h2:mem:play;MODE=MYSQL;LOCK_MODE=0
-03 十一月 2011 15:30:51,314 INFO  ~ Application 'play_learning' is now started !
