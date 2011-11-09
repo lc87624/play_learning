@@ -1,4 +1,24 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
 
-<h1>Hello World!</h1>
+#{if frontPost}
+    #{display post:frontPost, as:'home' /}
+    
+    #{if olderPosts.size() > 1}
+        <div class="older-posts">    
+            <h3>Older posts <span class="from">from this blog</span></h3>
+        
+            #{list items:olderPosts, as:'oldPost'}
+                #{display post:oldPost, as:'teaser' /}
+            #{/list}
+        </div>
+        
+    #{/if}
+    
+#{/if}
+ 
+#{else}
+    <div class="empty">
+        There is currently nothing to read here.
+    </div>
+#{/else}
