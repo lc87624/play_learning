@@ -42,4 +42,12 @@ public class Post extends Model {
 		this.save();
 		return this;
 	}
+	
+	public Post previous(){
+		return Post.find("postedAt < ? order by postedAt desc", this.postedAt).first();
+	}
+	
+	public Post next(){
+		return Post.find("postedAt > ? order by postedAt asc", this.postedAt).first();
+	}
 }
