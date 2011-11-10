@@ -1,0 +1,191 @@
+#
+# An unexpected error has been detected by Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x01d26d11, pid=6152, tid=7980
+#
+# Java VM: Java HotSpot(TM) Client VM (11.0-b15 mixed mode windows-x86)
+# Problematic frame:
+# j  controllers.Application.postComment(Ljava/lang/Long;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V+79
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0c61d000):  JavaThread "play-thread-1" [_thread_in_Java, id=7980, stack(0x0cf20000,0x0cf70000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x09e5d918
+
+Registers:
+EAX=0x00000001, EBX=0x000000b8, ECX=0x09d93668, EDX=0x000328a8
+ESP=0x0cf6f270, EBP=0x0cf6f290, ESI=0x09d92cb7, EDI=0x0cf6f2c0
+EIP=0x01d26d11, EFLAGS=0x00010202
+
+Top of Stack: (sp=0x0cf6f270)
+0x0cf6f270:   0cf6f270 09d92cb7 0cf6f2c0 09d93668
+0x0cf6f280:   00000000 09d92df0 00000000 0cf6f2b0
+0x0cf6f290:   0cf6f2dc 01d102ca 00000000 00000000
+0x0cf6f2a0:   00000000 00000000 00000000 00000000
+0x0cf6f2b0:   03d485b0 03d48558 03d48890 03d48b80
+0x0cf6f2c0:   04242970 0cf6f338 6d978fec 00001fa0
+0x0cf6f2d0:   0cf6f420 0c61d000 09d92df0 01d10265
+0x0cf6f2e0:   6d97937d 0cf6f338 0cf6f418 0000000a 
+
+Instructions: (pc=0x01d26d11)
+0x01d26d01:   00 00 50 89 75 e4 0f b7 56 01 8b 4d ec c1 e2 02
+0x01d26d11:   8b 5c 91 10 c1 eb 10 81 e3 ff 00 00 00 81 fb b8 
+
+
+Stack: [0x0cf20000,0x0cf70000],  sp=0x0cf6f270,  free space=316k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+j  controllers.Application.postComment(Ljava/lang/Long;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V+79
+v  ~StubRoutines::call_stub
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x01bb7000 JavaThread "JDWP Command Reader" daemon [_thread_in_native, id=7504, stack(0x0bea0000,0x0bef0000)]
+  0x0c80e000 JavaThread "JDWP Transport Listener: dt_socket" daemon [_thread_blocked, id=6484, stack(0x0ce80000,0x0ced0000)]
+  0x0c88a400 JavaThread "New I/O server worker #1-2" [_thread_in_native, id=3792, stack(0x0f680000,0x0f6d0000)]
+  0x0c88a800 JavaThread "AWT-Windows" daemon [_thread_in_native, id=5908, stack(0x0e7b0000,0x0e800000)]
+  0x0c4d8000 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=6704, stack(0x0e6c0000,0x0e710000)]
+  0x0c738000 JavaThread "New I/O server worker #1-1" [_thread_in_native, id=4440, stack(0x0e3c0000,0x0e410000)]
+  0x0c745c00 JavaThread "New I/O server worker #1-4" [_thread_in_native, id=6196, stack(0x0d030000,0x0d080000)]
+  0x01af3400 JavaThread "net.sf.ehcache.CacheManager@6cc873" daemon [_thread_blocked, id=6748, stack(0x0ced0000,0x0cf20000)]
+  0x0c5db400 JavaThread "com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2" daemon [_thread_blocked, id=6904, stack(0x0d2f0000,0x0d340000)]
+  0x0c5db000 JavaThread "com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1" daemon [_thread_blocked, id=4364, stack(0x0d2a0000,0x0d2f0000)]
+  0x0c5da000 JavaThread "com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0" daemon [_thread_blocked, id=2336, stack(0x0d250000,0x0d2a0000)]
+  0x0c38ec00 JavaThread "Timer-0" daemon [_thread_blocked, id=7940, stack(0x0d0c0000,0x0d110000)]
+=>0x0c61d000 JavaThread "play-thread-1" [_thread_in_Java, id=7980, stack(0x0cf20000,0x0cf70000)]
+  0x0136bc00 JavaThread "DestroyJavaVM" [_thread_blocked, id=6248, stack(0x002a0000,0x002f0000)]
+  0x0c5a0c00 JavaThread "New I/O server boss #1 ([id: 0x00a29c6e, /0.0.0.0:9000])" [_thread_in_native, id=7332, stack(0x0ce30000,0x0ce80000)]
+  0x0befd000 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=7052, stack(0x0c190000,0x0c1e0000)]
+  0x0befcc00 JavaThread "CompilerThread0" daemon [_thread_blocked, id=6616, stack(0x0c140000,0x0c190000)]
+  0x0bef2000 JavaThread "JDWP Event Helper Thread" daemon [_thread_blocked, id=6640, stack(0x0c0f0000,0x0c140000)]
+  0x01b79400 JavaThread "Attach Listener" daemon [_thread_blocked, id=5952, stack(0x0bdb0000,0x0be00000)]
+  0x01b68400 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=7492, stack(0x0bd60000,0x0bdb0000)]
+  0x01b54400 JavaThread "Finalizer" daemon [_thread_blocked, id=7240, stack(0x0bd10000,0x0bd60000)]
+  0x01b4f800 JavaThread "Reference Handler" daemon [_thread_blocked, id=5180, stack(0x01370000,0x013c0000)]
+
+Other Threads:
+  0x01b4c400 VMThread [stack: 0x01310000,0x01360000] [id=5440]
+  0x0bf01800 WatcherThread [stack: 0x0c1e0000,0x0c230000] [id=5948]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 960K, used 651K [0x03d10000, 0x03e10000, 0x041f0000)
+  eden space 896K,  71% used [0x03d10000, 0x03daf250, 0x03df0000)
+  from space 64K,  23% used [0x03df0000, 0x03df3af8, 0x03e00000)
+  to   space 64K,   0% used [0x03e00000, 0x03e00000, 0x03e10000)
+ tenured generation   total 11232K, used 10913K [0x041f0000, 0x04ce8000, 0x07d10000)
+   the space 11232K,  97% used [0x041f0000, 0x04c98600, 0x04c98600, 0x04ce8000)
+ compacting perm gen  total 33792K, used 33583K [0x07d10000, 0x09e10000, 0x0bd10000)
+   the space 33792K,  99% used [0x07d10000, 0x09ddbc88, 0x09ddbe00, 0x09e10000)
+No shared spaces configured.
+
+Dynamic libraries:
+0x00400000 - 0x00424000 	C:\Program Files\Java\jdk1.6.0_10\bin\javaw.exe
+0x77240000 - 0x7737d000 	C:\Windows\SYSTEM32\ntdll.dll
+0x761e0000 - 0x762b4000 	C:\Windows\system32\kernel32.dll
+0x75330000 - 0x7537a000 	C:\Windows\system32\KERNELBASE.dll
+0x75bc0000 - 0x75c60000 	C:\Windows\system32\ADVAPI32.dll
+0x757b0000 - 0x7585c000 	C:\Windows\system32\msvcrt.dll
+0x75610000 - 0x75629000 	C:\Windows\SYSTEM32\sechost.dll
+0x77380000 - 0x77421000 	C:\Windows\system32\RPCRT4.dll
+0x75a60000 - 0x75b29000 	C:\Windows\system32\USER32.dll
+0x76090000 - 0x760de000 	C:\Windows\system32\GDI32.dll
+0x75c60000 - 0x75c6a000 	C:\Windows\system32\LPK.dll
+0x75630000 - 0x756cd000 	C:\Windows\system32\USP10.dll
+0x77450000 - 0x7746f000 	C:\Windows\system32\IMM32.DLL
+0x75d10000 - 0x75ddc000 	C:\Windows\system32\MSCTF.dll
+0x7c340000 - 0x7c396000 	C:\Program Files\Java\jdk1.6.0_10\jre\bin\msvcr71.dll
+0x6d8b0000 - 0x6db06000 	C:\Program Files\Java\jdk1.6.0_10\jre\bin\client\jvm.dll
+0x755b0000 - 0x755e2000 	C:\Windows\system32\WINMM.dll
+0x751e0000 - 0x7522b000 	C:\Windows\system32\apphelp.dll
+0x6d330000 - 0x6d338000 	C:\Program Files\Java\jdk1.6.0_10\jre\bin\hpi.dll
+0x76080000 - 0x76085000 	C:\Windows\system32\PSAPI.DLL
+0x6d420000 - 0x6d449000 	C:\Program Files\Java\jdk1.6.0_10\jre\bin\jdwp.dll
+0x6d370000 - 0x6d38a000 	C:\Program Files\Java\jdk1.6.0_10\jre\bin\instrument.dll
+0x6d750000 - 0x6d756000 	C:\Program Files\Java\jdk1.6.0_10\jre\bin\npt.dll
+0x6d860000 - 0x6d86c000 	C:\Program Files\Java\jdk1.6.0_10\jre\bin\verify.dll
+0x6d3d0000 - 0x6d3ef000 	C:\Program Files\Java\jdk1.6.0_10\jre\bin\java.dll
+0x6d8a0000 - 0x6d8af000 	C:\Program Files\Java\jdk1.6.0_10\jre\bin\zip.dll
+0x6d2a0000 - 0x6d2a7000 	C:\Program Files\Java\jdk1.6.0_10\jre\bin\dt_socket.dll
+0x762d0000 - 0x76305000 	C:\Windows\system32\WS2_32.dll
+0x75cf0000 - 0x75cf6000 	C:\Windows\system32\NSI.dll
+0x10000000 - 0x10026000 	C:\Windows\system32\ikutm.dll
+0x74d20000 - 0x74d5c000 	C:\Windows\system32\mswsock.dll
+0x748c0000 - 0x748c5000 	C:\Windows\System32\wshtcpip.dll
+0x6d6c0000 - 0x6d6d3000 	C:\Program Files\Java\jdk1.6.0_10\jre\bin\net.dll
+0x74d10000 - 0x74d16000 	C:\Windows\System32\wship6.dll
+0x6d6e0000 - 0x6d6e9000 	C:\Program Files\Java\jdk1.6.0_10\jre\bin\nio.dll
+0x74d60000 - 0x74d76000 	C:\Windows\system32\CRYPTSP.dll
+0x74b00000 - 0x74b3b000 	C:\Windows\system32\rsaenh.dll
+0x74940000 - 0x74957000 	C:\Windows\system32\USERENV.dll
+0x752b0000 - 0x752bb000 	C:\Windows\system32\profapi.dll
+0x75230000 - 0x7523c000 	C:\Windows\system32\CRYPTBASE.dll
+0x73810000 - 0x73820000 	C:\Windows\system32\NLAapi.dll
+0x74be0000 - 0x74c24000 	C:\Windows\system32\DNSAPI.dll
+0x6ff30000 - 0x6ff38000 	C:\Windows\System32\winrnr.dll
+0x6ff20000 - 0x6ff30000 	C:\Windows\system32\napinsp.dll
+0x6ff00000 - 0x6ff12000 	C:\Windows\system32\pnrpnsp.dll
+0x6fef0000 - 0x6fefd000 	C:\Windows\system32\wshbth.dll
+0x70680000 - 0x706a1000 	C:\Program Files\Bonjour\mdnsNSP.dll
+0x73120000 - 0x7313c000 	C:\Windows\system32\Iphlpapi.DLL
+0x73110000 - 0x73117000 	C:\Windows\system32\WINNSI.DLL
+0x70670000 - 0x70676000 	C:\Windows\system32\rasadhlp.dll
+0x72e30000 - 0x72e68000 	C:\Windows\System32\fwpuclnt.dll
+0x6d610000 - 0x6d619000 	C:\Program Files\Java\jdk1.6.0_10\jre\bin\management.dll
+0x6d0b0000 - 0x6d1e8000 	C:\Program Files\Java\jdk1.6.0_10\jre\bin\awt.dll
+0x73c30000 - 0x73c81000 	C:\Windows\system32\WINSPOOL.DRV
+0x75ec0000 - 0x7601c000 	C:\Windows\system32\ole32.dll
+0x71150000 - 0x711d4000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_5.82.7600.16661_none_ebfb56996c72aefc\comctl32.dll
+0x73e10000 - 0x73e23000 	C:\Windows\system32\DWMAPI.DLL
+0x75de0000 - 0x75e20000 	C:\Windows\system32\uxtheme.dll
+0x6d2d0000 - 0x6d324000 	C:\Program Files\Java\jdk1.6.0_10\jre\bin\fontmanager.dll
+0x0e800000 - 0x0e940000 	C:\Program Files\KSafe\ksfmon.dll
+0x75750000 - 0x757a7000 	C:\Windows\system32\SHLWAPI.dll
+0x0eb20000 - 0x0edbf000 	C:\Windows\system32\SOGOUPY.IME
+0x736d0000 - 0x736d5000 	C:\Windows\system32\MSIMG32.dll
+0x748d0000 - 0x748d9000 	C:\Windows\system32\VERSION.dll
+0x76310000 - 0x76f59000 	C:\Windows\system32\SHELL32.dll
+0x73900000 - 0x73921000 	C:\Windows\system32\ntmarta.dll
+0x75700000 - 0x75745000 	C:\Windows\system32\WLDAP32.dll
+0x0e990000 - 0x0e9fd000 	C:\Program Files\SogouInput\6.0.0.6236\Resource.dll
+0x0d350000 - 0x0d35f000 	C:\Program Files\Youdao\Dict4\WordStrokeHelper32.dll
+0x63110000 - 0x632d3000 	C:\Windows\system32\d3d9.dll
+0x650e0000 - 0x650e6000 	C:\Windows\system32\d3d8thk.dll
+0x658b0000 - 0x66014000 	C:\Windows\system32\nvd3dum.dll
+
+VM Arguments:
+jvm_args: -Xdebug -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n -Dplay.debug=yes -Dplay.id= -Dapplication.path=D:\Tech Learning\Play Framework\apps\play_learning -Djava.endorsed.dirs=D:\Tech Learning\Play Framework\play-1.2.2/framework/endorsed -javaagent:D:\Tech Learning\Play Framework\play-1.2.2/framework/play-1.2.2.jar -Dfile.encoding=UTF-8 
+java_command: play.server.Server
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+CLASSPATH=.;C:\Program Files\Java\jdk1.6.0_10\lib;C:\Program Files\QuickTime\QTSystem\QTJava.zip
+PATH=C:/PROGRAM FILES/JAVA/JDK1.6.0_10/BIN/../jre/bin/client;C:/PROGRAM FILES/JAVA/JDK1.6.0_10/BIN/../jre/bin;C:/PROGRAM FILES/JAVA/JDK1.6.0_10/BIN/../jre/lib/i386;C:\WINDOWS\SYSTEM32;C:\WINDOWS;C:\WINDOWS\SYSTEM32\WBEM;C:\WINDOWS\SYSTEM32\WINDOWSPOWERSHELL\V1.0\;C:\PROGRAM FILES\COMMON FILES\THUNDER NETWORK\KANKAN\CODECS;C:\PROGRAM FILES\COMMON FILES\TTKN\BIN;C:\PROGRAM FILES\JAVA\JDK1.6.0_10\BIN;C:\PROGRAM FILES\WINDOWS7MASTER;C:\PROGRAM FILES\MYSQL\MYSQL SERVER 5.0\BIN;C:\PROGRAM FILES\GRAPHVIZ2.26.3\BIN;C:\Program Files\Lenovo\Bluetooth Software\;C:\Program Files\Windows7Master;C:\Program Files\Common Files\Thunder Network\KanKan\Codecs;C:\Program Files\Bitvise Tunnelier;D:\Android Dev\android-sdk-windows\tools;C:\Program Files\Python32;D:\Play Framework\play-1.2.2;C:\Program Files\QuickTime\QTSystem\;D:\download\apache-ant-1.8.2\bin;D:\Tech Learning\Play Framework\play-1.2.2;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;D:\download\eclipse;
+USERNAME=FOG
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 23 Stepping 6, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows NT 6.1 Build 7600 
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 7 stepping 6, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3
+
+Memory: 4k page, physical 2094044k(290788k free), swap 4188088k(1232736k free)
+
+vm_info: Java HotSpot(TM) Client VM (11.0-b15) for windows-x86 JRE (1.6.0_10-rc2-b32), built on Sep 12 2008 00:52:11 by "java_re" with MS VC++ 7.1
+
+time: Thu Nov 10 23:30:05 2011
+elapsed time: 2279 seconds
+
