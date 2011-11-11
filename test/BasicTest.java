@@ -2,6 +2,7 @@ import java.util.List;
 
 import models.Comment;
 import models.Post;
+import models.Tag;
 import models.User;
 
 import org.junit.Before;
@@ -134,8 +135,22 @@ public class BasicTest extends UnitTest {
     	assertEquals(3, firstPost.comments.size());
     	assertEquals(3, Comment.count("byPost", firstPost));
     	
-    	
-    	
     }
-
+    
+    @Test
+    public void testTags(){
+    	User bob = new User("lc87624@gmail.com", "secret", "Bob wayne").save();
+    	Post post1 = new Post(bob, "My first blog", "Hello world").save();
+    	Post post2 = new Post(bob, "My second blog", "Hello world").save();
+    	
+    	assertEquals(0, Post.findTaggedWith("Red").size());
+    	
+    	post1.tagItWith("Red").tagItWith("Blue").save();
+    	post2.tagItWith("Red").tagItWith("Green").save();
+    	
+    	assertEquals(2, Post.findTaggedWith("Red").size());
+    	assertEquals(1, Post.findTaggedWith("Blue").size());
+    	assertEquals(1, Post.findTaggedWith("Green").size());
+    }
+    
 }

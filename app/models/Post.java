@@ -2,11 +2,14 @@ package models;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -26,6 +29,9 @@ public class Post extends Model {
 	
 	@OneToMany(mappedBy="post", cascade=CascadeType.ALL)
 	public List<Comment> comments;
+	
+	@ManyToMany(cascade=CascadeType.PERSIST)
+	public Set<Tag> tags;
 
 	public Post(User author, String title, String content) {
 		super();
@@ -34,6 +40,7 @@ public class Post extends Model {
 		this.author = author;
 		this.postedAt = new Date();
 		this.comments = new ArrayList<Comment>();
+		this.tags = new HashSet<Tag>();
 	}
 	
 	public Post addComment(String author, String content){
@@ -49,5 +56,16 @@ public class Post extends Model {
 	
 	public Post next(){
 		return Post.find("postedAt > ? order by postedAt asc", this.postedAt).first();
+	}
+	
+	public Post tagItWith(String name){
+		tags.add(Tag.findOrCreateByName(name));
+		return this;
+	}
+	
+	public static List<Post> findTaggedWith(String tag){
+		return Post.find(
+			"select distinct p from Post p join p.tags as t where t.name = ?", tag
+		).fetch();
 	}
 }
